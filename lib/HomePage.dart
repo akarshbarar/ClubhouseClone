@@ -1,3 +1,4 @@
+import 'package:clubhoseclone/UTILS/AppColors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -34,6 +35,63 @@ class HomePage extends StatelessWidget {
           ],
         ),
         body: Stack(alignment: Alignment.center, children: <Widget>[
+          ListView.builder(
+            padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 120.0),
+            itemCount: 10,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                height: 200.0,
+                width: 200.0,
+                decoration: BoxDecoration(
+                    color: AppColor.secondryColor,
+                    borderRadius: BorderRadius.circular(20.0)),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 30, top: 5.0, bottom: 4.0),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          children: [
+                            Text(
+                              "News News News",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                            Icon(
+                              Icons.home,
+                              color: AppColor.green,
+                            ),
+                          ],
+                        ),
+                        Text("3 Minute News",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w500)),
+                        Row(children: [
+                          CircleAvatar(
+                            child: FlutterLogo(),
+                          ),
+                          Column(
+                            children: [
+                              Text("Speaker 1"),
+                              Text("Speaker 2"),
+                              Text("Speaker 3"),
+                              Row(
+                                children: [
+                                  Text("91"),
+                                  Icon(Icons.person, color: Colors.grey),
+                                  Text("/"),
+                                  Text("35"),
+                                  Icon(Icons.chat, color: Colors.grey)
+                                ],
+                              )
+                            ],
+                          )
+                        ])
+                      ]),
+                ),
+              );
+            },
+          ),
           Positioned(
               bottom: 50.0,
               child: Container(
@@ -56,7 +114,29 @@ class HomePage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ))
                 ])),
-              ))
+              )),
+          Positioned(
+              bottom: 60.0,
+              right: 50.0,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(CupertinoIcons.circle_grid_3x3_fill)),
+                  Positioned(
+                      right: 4.0,
+                      bottom: 11.0,
+                      child: Container(
+                        height: 15,
+                        width: 15,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Theme.of(context).accentColor,
+                        ),
+                      )),
+                ],
+              )),
         ])
 
         // Center(
