@@ -26,7 +26,9 @@ class HomePage extends StatelessWidget {
               onPressed: () {},
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed('/profile');
+              },
               child: CircleAvatar(
                 child: FlutterLogo(),
                 radius: 30.0,

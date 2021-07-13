@@ -1,4 +1,5 @@
 import 'package:clubhoseclone/HomePage.dart';
+import 'package:clubhoseclone/Profile.dart';
 import 'package:clubhoseclone/UTILS/AppColors.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: AppColor.backgroundColor,
           iconTheme: IconThemeData(color: Colors.black)),
       home: HomePage(),
+      routes: {
+        '/profile': (context) => Profile(),
+      },
     );
   }
 }
