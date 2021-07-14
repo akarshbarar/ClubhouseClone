@@ -1,6 +1,7 @@
 import 'package:clubhoseclone/HomePage.dart';
 import 'package:clubhoseclone/Profile.dart';
 import 'package:clubhoseclone/UTILS/AppColors.dart';
+import 'package:clubhoseclone/finduser.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       routes: {
         '/profile': (context) => Profile(),
+        '/explore': (context) => FindUser()
       },
     );
   }

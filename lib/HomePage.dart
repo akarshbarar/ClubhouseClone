@@ -10,7 +10,9 @@ class HomePage extends StatelessWidget {
           elevation: 0,
           leading: IconButton(
             icon: Icon(CupertinoIcons.search),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed('/explore');
+            },
           ),
           actions: [
             IconButton(
