@@ -25,7 +25,9 @@ class HomePage extends StatelessWidget {
             ),
             IconButton(
               icon: Icon(CupertinoIcons.bell),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('/activity');
+              },
             ),
             GestureDetector(
               onTap: () {

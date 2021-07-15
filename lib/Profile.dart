@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -12,6 +13,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(CupertinoIcons.back),
         elevation: 0,
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.share)),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FindUser extends StatefulWidget {
@@ -12,6 +13,7 @@ class _FindUserState extends State<FindUser> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: Icon(CupertinoIcons.back),
           elevation: 0,
           title: Text('Explore'),
           centerTitle: true,

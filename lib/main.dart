@@ -1,3 +1,4 @@
+import 'package:clubhoseclone/Activity.dart';
 import 'package:clubhoseclone/HomePage.dart';
 import 'package:clubhoseclone/Profile.dart';
 import 'package:clubhoseclone/UTILS/AppColors.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       routes: {
         '/profile': (context) => Profile(),
-        '/explore': (context) => FindUser()
+        '/explore': (context) => FindUser(),
+        '/activity': (context) => Activity()
       },
     );
   }
