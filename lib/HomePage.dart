@@ -33,9 +33,20 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pushNamed('/profile');
               },
-              child: CircleAvatar(
-                child: FlutterLogo(),
-                radius: 30.0,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Container(
+                    width: 30,
+                    height: 30,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Image.network(
+                        'https://robohash.org/c1d5c8fd6bebe69a340254e5b4ad7b89?set=set4&bgset=&size=400x400',
+                        fit: BoxFit.fitWidth,
+                        width: 100,
+                        height: 100,
+                      ),
+                    )),
               ),
             )
           ],
@@ -45,55 +56,109 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 120.0),
             itemCount: 10,
             itemBuilder: (BuildContext context, int index) {
-              return Container(
-                height: 200.0,
-                width: 200.0,
-                decoration: BoxDecoration(
-                    color: AppColor.secondryColor,
-                    borderRadius: BorderRadius.circular(20.0)),
-                child: Padding(
-                  padding: EdgeInsets.only(left: 30, top: 5.0, bottom: 4.0),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Row(
-                          children: [
-                            Text(
-                              "News News News",
-                              style: TextStyle(fontSize: 15),
-                            ),
-                            Icon(
-                              Icons.home,
-                              color: AppColor.green,
-                            ),
-                          ],
-                        ),
-                        Text("3 Minute News",
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500)),
-                        Row(children: [
-                          CircleAvatar(
-                            child: FlutterLogo(),
-                          ),
-                          Column(
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 200.0,
+                  width: 200.0,
+                  decoration: BoxDecoration(
+                      color: AppColor.secondryColor,
+                      borderRadius: BorderRadius.circular(20.0)),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 30, top: 5.0, bottom: 4.0),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Row(
                             children: [
-                              Text("Speaker 1"),
-                              Text("Speaker 2"),
-                              Text("Speaker 3"),
-                              Row(
-                                children: [
-                                  Text("91"),
-                                  Icon(Icons.person, color: Colors.grey),
-                                  Text("/"),
-                                  Text("35"),
-                                  Icon(Icons.chat, color: Colors.grey)
-                                ],
-                              )
+                              Text(
+                                "News News News",
+                                style: TextStyle(fontSize: 15),
+                              ),
+                              Icon(
+                                Icons.home,
+                                color: AppColor.green,
+                              ),
                             ],
-                          )
-                        ])
-                      ]),
+                          ),
+                          Text("3 Minute News",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w500)),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Stack(
+                                    clipBehavior: Clip.none,
+                                    children: <Widget>[
+                                      Positioned(
+                                        top: 20,
+                                        left: 10,
+                                        child: Container(
+                                            width: 50,
+                                            height: 50,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                              child: Image.network(
+                                                'https://picsum.photos/seed/692/600',
+                                                fit: BoxFit.fitWidth,
+                                                width: 100,
+                                                height: 100,
+                                              ),
+                                            )),
+                                      ),
+                                      Container(
+                                        width: 50,
+                                        height: 50,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          child: Image.network(
+                                              'https://picsum.photos/seed/901/600'),
+                                        ),
+                                      ),
+                                    ]),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Speaker 1"),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text("Speaker 2"),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text("Speaker 3"),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text("91"),
+                                          Icon(
+                                            Icons.person,
+                                            color: Colors.grey,
+                                            size: 25,
+                                          ),
+                                          Text("/"),
+                                          Text("35"),
+                                          Icon(Icons.chat, color: Colors.grey)
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ])
+                        ]),
+                  ),
                 ),
               );
             },
@@ -128,7 +193,9 @@ class HomePage extends StatelessWidget {
                 alignment: Alignment.center,
                 children: [
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/available');
+                      },
                       icon: Icon(CupertinoIcons.circle_grid_3x3_fill)),
                   Positioned(
                       right: 4.0,
