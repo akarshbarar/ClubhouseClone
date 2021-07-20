@@ -168,7 +168,7 @@ class HomePage extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                    color: Theme.of(context).accentColor,
+                    color: AppColor.green,
                     borderRadius: BorderRadius.circular(25)),
                 child: Text.rich(TextSpan(children: [
                   WidgetSpan(
@@ -188,7 +188,7 @@ class HomePage extends StatelessWidget {
               )),
           Positioned(
               bottom: 60.0,
-              right: 50.0,
+              left: 50.0,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -205,9 +205,22 @@ class HomePage extends StatelessWidget {
                         width: 15,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Theme.of(context).accentColor,
+                          color: AppColor.green,
                         ),
                       )),
+                ],
+              )),
+          Positioned(
+              bottom: 60.0,
+              right: 50.0,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/chat');
+                      },
+                      icon: Icon(Icons.send)),
                 ],
               )),
         ])

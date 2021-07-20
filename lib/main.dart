@@ -3,6 +3,7 @@ import 'package:clubhoseclone/AvailabletoChat.dart';
 import 'package:clubhoseclone/HomePage.dart';
 import 'package:clubhoseclone/Profile.dart';
 import 'package:clubhoseclone/UTILS/AppColors.dart';
+import 'package:clubhoseclone/chatpage.dart';
 import 'package:clubhoseclone/finduser.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.white,
-        accentColor: Colors.green,
+        accentColor: Colors.blue,
         appBarTheme: AppBarTheme(backgroundColor: AppColor.backgroundColor),
         scaffoldBackgroundColor: AppColor.backgroundColor,
         iconTheme: IconThemeData(color: Colors.black),
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         '/profile': (context) => Profile(),
         '/explore': (context) => FindUser(),
         '/activity': (context) => Activity(),
-        '/available': (context) => AvailableToChat()
+        '/available': (context) => AvailableToChat(),
+        '/chat': (context) => Chat()
       },
     );
   }
