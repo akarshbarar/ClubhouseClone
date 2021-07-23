@@ -168,29 +168,52 @@ class HomePage extends StatelessWidget {
               );
             },
           ),
-          Positioned(
-              bottom: 50.0,
-              child: Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                    color: AppColor.green,
-                    borderRadius: BorderRadius.circular(25)),
-                child: Text.rich(TextSpan(children: [
-                  WidgetSpan(
-                      child: Icon(
-                    CupertinoIcons.add,
-                    size: 20,
-                    color: Colors.white,
-                  )),
-                  TextSpan(
-                      text: ' Start a room',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ))
-                ])),
-              )),
+          GestureDetector(
+            onTap: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      decoration: BoxDecoration(
+                          color: AppColor.secondryColor,
+                          borderRadius: BorderRadius.circular(20.0)),
+                      height: MediaQuery.of(context).size.height / 2,
+                      child: Column(
+                        children: [
+                          Text("Hii"),
+                          MaterialButton(
+                            onPressed: () {},
+                            child: Text("Lets Go"),
+                          )
+                        ],
+                      ),
+                    );
+                  });
+            },
+            child: Positioned(
+                bottom: 5.0,
+                child: Container(
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: AppColor.green,
+                      borderRadius: BorderRadius.circular(25)),
+                  child: Text.rich(TextSpan(children: [
+                    WidgetSpan(
+                        child: Icon(
+                      CupertinoIcons.add,
+                      size: 20,
+                      color: Colors.white,
+                    )),
+                    TextSpan(
+                        text: ' Start a room',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ))
+                  ])),
+                )),
+          ),
           Positioned(
               bottom: 60.0,
               left: 50.0,
