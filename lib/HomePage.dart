@@ -178,20 +178,75 @@ class HomePage extends StatelessWidget {
                           color: AppColor.secondryColor,
                           borderRadius: BorderRadius.circular(20.0)),
                       height: MediaQuery.of(context).size.height / 2,
-                      child: Column(
-                        children: [
-                          Text("Hii"),
-                          MaterialButton(
-                            onPressed: () {},
-                            child: Text("Lets Go"),
-                          )
-                        ],
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Wrap(
+                              children: [
+                                Container(
+                                    width: 50,
+                                    height: 50,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      child: Image.network(
+                                        'https://picsum.photos/seed/692/600',
+                                        fit: BoxFit.fitWidth,
+                                        width: 100,
+                                        height: 100,
+                                      ),
+                                    )),
+                                Container(
+                                    width: 50,
+                                    height: 50,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      child: Image.network(
+                                        'https://picsum.photos/seed/692/600',
+                                        fit: BoxFit.fitWidth,
+                                        width: 100,
+                                        height: 100,
+                                      ),
+                                    )),
+                                Container(
+                                    width: 50,
+                                    height: 50,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      child: Image.network(
+                                        'https://picsum.photos/seed/692/600',
+                                        fit: BoxFit.fitWidth,
+                                        width: 100,
+                                        height: 100,
+                                      ),
+                                    )),
+                                Container(
+                                    width: 50,
+                                    height: 50,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      child: Image.network(
+                                        'https://picsum.photos/seed/692/600',
+                                        fit: BoxFit.fitWidth,
+                                        width: 100,
+                                        height: 100,
+                                      ),
+                                    )),
+                              ],
+                            ),
+                            MaterialButton(
+                              onPressed: () {},
+                              child: Text("Lets Go"),
+                            )
+                          ],
+                        ),
                       ),
                     );
                   });
             },
-            child: Positioned(
-                bottom: 5.0,
+            child: Align(
+                alignment: Alignment.bottomCenter,
+                heightFactor: 10.5,
                 child: Container(
                   padding: EdgeInsets.all(15),
                   decoration: BoxDecoration(
