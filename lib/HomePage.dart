@@ -177,66 +177,95 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: AppColor.secondryColor,
                           borderRadius: BorderRadius.circular(20.0)),
-                      height: MediaQuery.of(context).size.height / 2,
+                      height: MediaQuery.of(context).size.height / 3,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
                             Wrap(
                               children: [
-                                Container(
-                                    width: 50,
-                                    height: 50,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/692/600',
-                                        fit: BoxFit.fitWidth,
+                                Column(
+                                  children: [
+                                    Container(
                                         width: 100,
                                         height: 100,
-                                      ),
-                                    )),
-                                Container(
-                                    width: 50,
-                                    height: 50,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/692/600',
-                                        fit: BoxFit.fitWidth,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          child: Image.network(
+                                            'https://picsum.photos/seed/692/600',
+                                            fit: BoxFit.fitWidth,
+                                            width: 60,
+                                            height: 60,
+                                          ),
+                                        )),
+                                    Text(
+                                      "Open",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
                                         width: 100,
                                         height: 100,
-                                      ),
-                                    )),
-                                Container(
-                                    width: 50,
-                                    height: 50,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/692/600',
-                                        fit: BoxFit.fitWidth,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          child: Image.network(
+                                            'https://picsum.photos/seed/692/600',
+                                            fit: BoxFit.fitWidth,
+                                            width: 60,
+                                            height: 60,
+                                          ),
+                                        )),
+                                    Text(
+                                      "Social",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
                                         width: 100,
                                         height: 100,
-                                      ),
-                                    )),
-                                Container(
-                                    width: 50,
-                                    height: 50,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/692/600',
-                                        fit: BoxFit.fitWidth,
-                                        width: 100,
-                                        height: 100,
-                                      ),
-                                    )),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          child: Image.network(
+                                            'https://picsum.photos/seed/692/600',
+                                            fit: BoxFit.fitWidth,
+                                            width: 60,
+                                            height: 60,
+                                          ),
+                                        )),
+                                    Text(
+                                      "Closed",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
                               ],
                             ),
-                            MaterialButton(
+                            Divider(
+                              thickness: 1,
+                            ),
+                            Text("Start a room Open to everyone"),
+                            RaisedButton(
                               onPressed: () {},
-                              child: Text("Lets Go"),
+                              textColor: Colors.white,
+                              color: AppColor.green,
+                              child: Text("Let's go",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0)),
                             )
                           ],
                         ),
