@@ -1,3 +1,5 @@
+import 'package:clubhoseclone/MODAL/RoomModal.dart';
+import 'package:clubhoseclone/UTILS/RoomData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +11,7 @@ class Room extends StatefulWidget {
 }
 
 class _RoomState extends State<Room> {
+  List<RoomModal> list = roomList;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +53,7 @@ class _RoomState extends State<Room> {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  'EXCLUSIVE NETWORK CLUB',
+                  list[index].roomName,
                   style: TextStyle(fontSize: 10),
                 ),
               );
@@ -69,51 +72,19 @@ class _RoomState extends State<Room> {
                 padding: const EdgeInsets.all(8.0),
                 child: Wrap(
                   children: [
-                    Container(
-                      width: 50,
-                      height: 50,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12.0),
-                        child:
-                            Image.network('https://picsum.photos/seed/901/600'),
-                      ),
-                    ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12.0),
-                        child:
-                            Image.network('https://picsum.photos/seed/901/600'),
-                      ),
-                    ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12.0),
-                        child:
-                            Image.network('https://picsum.photos/seed/901/600'),
-                      ),
-                    ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12.0),
-                        child:
-                            Image.network('https://picsum.photos/seed/901/600'),
-                      ),
-                    ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12.0),
-                        child:
-                            Image.network('https://picsum.photos/seed/901/600'),
-                      ),
-                    )
+                    ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: list[0].speakers.length,
+                        itemBuilder: (context, i) {
+                          return Container(
+                            width: 50,
+                            height: 50,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12.0),
+                              child: Image.network(list[0].speakers[i]),
+                            ),
+                          );
+                        }),
                   ],
                 ),
               );
@@ -250,12 +221,18 @@ class _RoomState extends State<Room> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Chip(
-            label: Text(
-              'Leave quietly',
-              style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Chip(
+              label: Text(
+                'Leave quietly',
+                style:
+                    TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+              ),
+              avatar: CircleAvatar(),
             ),
-            avatar: CircleAvatar(),
           ),
           Row(
             children: [
