@@ -19,7 +19,9 @@ class _ProfileState extends State<Profile> {
           IconButton(onPressed: () {}, icon: Icon(Icons.share)),
           IconButton(
             icon: Icon(Icons.settings),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed("/settings");
+            },
           ),
         ],
       ),

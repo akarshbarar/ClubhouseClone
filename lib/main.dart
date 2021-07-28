@@ -3,6 +3,7 @@ import 'package:clubhoseclone/AvailabletoChat.dart';
 import 'package:clubhoseclone/HomePage.dart';
 import 'package:clubhoseclone/Profile.dart';
 import 'package:clubhoseclone/Room.dart';
+import 'package:clubhoseclone/Settings.dart';
 import 'package:clubhoseclone/UTILS/AppColors.dart';
 import 'package:clubhoseclone/chatpage.dart';
 import 'package:clubhoseclone/finduser.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
         '/activity': (context) => Activity(),
         '/available': (context) => AvailableToChat(),
         '/chat': (context) => Chat(),
-        '/room': (context) => Room()
+        '/room': (context) => Room(),
+        '/settings': (context) => Settings()
       },
     );
   }
