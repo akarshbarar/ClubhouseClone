@@ -169,7 +169,7 @@ class HomePage extends StatelessWidget {
             },
             child: Align(
                 alignment: Alignment.bottomCenter,
-                heightFactor: 10.5,
+                heightFactor: 13.6,
                 child: Container(
                   padding: EdgeInsets.all(15),
                   decoration: BoxDecoration(
