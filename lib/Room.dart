@@ -72,13 +72,18 @@ class _RoomState extends State<Room> {
                 padding: const EdgeInsets.all(8.0),
                 child: Wrap(
                   children: [
-                    ListView.builder(
+                    GridView.builder(
+                        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 170,
+                            childAspectRatio: 3,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10),
                         shrinkWrap: true,
                         itemCount: list[0].speakers.length,
                         itemBuilder: (context, i) {
                           return Container(
-                            width: 50,
-                            height: 50,
+                            width: 100,
+                            height: 100,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(12.0),
                               child: Image.network(list[0].speakers[i]),
